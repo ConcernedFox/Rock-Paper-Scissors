@@ -1,0 +1,13 @@
+from tkinter import*
+root = Tk()
+root.title("Tkinter Guess Game")
+root.geometry("400x400")
+root.configure(background = "red")
+TPM = Label(root, text = "Username", fg = "black")
+ROTS = Button(root, text = "Submit", bd = 4,fg = "black")
+AOTC = Entry(root, width = 30)
+TPM.pack()
+AOTC.pack()
+ROTS.pack()
+
+root.mainloop()
