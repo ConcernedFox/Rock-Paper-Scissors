@@ -1,0 +1,43 @@
+from tkinter import*
+import random
+root = Tk()
+root.title("Rock Paper Scissors")
+root.geometry("400x400")
+root.configure(background = "red")
+Red = Label(root,text = "Rock... Paper... Scissors... SHOOT!", fg = "black")
+Orange = Label(root, text = "Player chose...", fg = "black")
+Yellow = Label(root, text = "Computer chose...", fg = "black")
+Green = Label(root, text = "Player score:")
+Blue = Label(root, text = "Computer score:")
+Purple = Label(root, text = "Winner is...")
+def Pinkish_Bronze(User_Choice):
+    Bronze = ["Rock", "Paper", "Scissors"]
+    Computer_Choice = random.choice(Bronze)
+    if User_Choice == "Rock" and Computer_Choice == "Scissors" or User_Choice == "Paper" and Computer_Choice == "Rock" or User_Choice == "Scissors" and Computer_Choice == "Paper":
+        Green.config(text = "This round, Player score:1")
+        Blue.config(text = "This round, Computer score:0")
+        Purple.config(text = "Winner is... PLAAAAAAAAYEEEEEEER!!!!!!!")
+    elif User_Choice == Computer_Choice:
+        Purple.config(text = "TIIIIIIIIIIIIIIIIE!!!!!!!")
+        Green.config(text = "This round, Player score: 0.5")
+        Blue.config(text = "This round, Computer score: 0.5")
+    else:
+        Purple.config(text = "Winner is... COOOOOOOOMPUUUUUUUUUUUUUTER!!!!!!!")
+        Green.config(text = "This round, Player score: 0")
+        Blue.config(text = "This round, Computer score: 1")
+    Orange.config(text = "Player chose... " + User_Choice)
+    Yellow.config(text = "Computer chose..." + Computer_Choice)
+Pink = Button(root, text = "Rock", command = lambda: Pinkish_Bronze("Rock"))
+Gold = Button(root, text = "Paper", command = lambda: Pinkish_Bronze("Paper"))
+Silver = Button(root, text = "Scissors", command = lambda: Pinkish_Bronze("Scissors"))
+Red.place(x = 0, y = 0)
+Orange.place(x = 0, y = 100)
+Yellow.place(x = 0, y = 200)
+Green.place(x = 200, y = 100)
+Blue.place(x = 200, y = 200)
+Purple.place(x = 0, y = 300)
+Pink.place(x = 0, y = 50)
+Gold.place(x = 100, y = 50)
+Silver.place(x = 200, y = 50)
+
+root.mainloop()
